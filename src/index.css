@@ -1,0 +1,158 @@
+@import 'tailwindcss';
+@layer base {
+
+  /* light theme (default) */
+  :root {
+    color-scheme: light;
+    --color-bg: #f8f5ff;
+    --color-surface: #ffffff;
+    --color-primary: #5222e7;
+    --color-primary-hover: #8b5cf6;
+    --color-accent: #f9a8d4;
+    --color-text: #3b2f4a;
+    --color-text-muted: #7c6f90;
+    --color-border: #e9dffb;
+    --color-input-bg: #ffffff;
+    --color-input-focus: #ddd6fe;
+    --color-hover: #faf5ff;
+    --color-danger: #e11d48;
+    --shadow-color: rgb(167 139 250 / 0.08);
+  }
+
+  /* dark theme = Quando existir a classe:
+    <html class="dark">
+    essas variáveis substituem automaticamente as do :root
+  */
+  .dark {
+    color-scheme: dark;
+    --color-bg: #140f1f;
+    --color-surface: #1d172b;
+    --color-primary: #c4b5fd;
+    --color-primary-hover: #a78bfa;
+    --color-accent: #f9a8d4;
+    --color-text: #f5f3ff;
+    --color-text-muted: #b6a8cc;
+    --color-border: #312547;
+    --color-input-bg: #241c34;
+    --color-input-focus: rgb(167 139 250 / 0.2);
+    --color-hover: #2c223d;
+    --color-danger: #fb7185;
+    --shadow-color: rgb(0 0 0 / 0.3);
+  }
+
+  /* Border padrão global */
+  * {
+    @apply border-[color:var(--color-border)];
+  }
+
+  /* Body global */
+  body {
+    @apply min-h-screen antialiased transition-colors duration-300;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family:
+            'Inter',
+            'Segoe UI',
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            'Open Sans',
+            'Helvetica Neue',
+            sans-serif;
+  }
+
+  /* Root do React */
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+/* COMPONENTES */
+@layer components {
+  /* Container padrão */
+  .page-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card reutilizável */
+  .surface-card {
+    @apply rounded-2xl border p-5 transition-all duration-300 sm:p-6;
+    background-color: var(--color-surface);
+    box-shadow: 0 4px 20px var(--shadow-color);
+  }
+
+  /* Badge/status */
+  .status-chip {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide;
+    background-color: rgb(167 139 250 / 0.12);
+    color: var(--color-primary);
+  }
+
+  /* Botão principal */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60;
+    background-color: var(--color-primary);
+  }
+
+  /* Hover botão principal */
+  .btn-primary:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  /* Botão secundário */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-200;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  /* Hover botão secundário */
+  .btn-secondary:hover {
+    background-color: var(--color-hover);
+  }
+
+  /* Labels */
+  .field-label {
+    @apply mb-1.5 block text-sm font-semibold;
+    color: var(--color-text);
+  }
+
+  /* Inputs e textareas */
+  .field-input,
+  .field-textarea {
+    @apply w-full rounded-lg border px-3 py-2 text-sm outline-none transition-all duration-200;
+    background-color: var(--color-input-bg);
+    color: var(--color-text);
+  }
+
+  /* Placeholder dos inputs */
+  .field-input::placeholder,
+  .field-textarea::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  /* Focus dos campos */
+  .field-input:focus,
+  .field-textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-input-focus);
+  }
+
+  /* Textarea */
+  .field-textarea {
+    @apply min-h-28 resize-y;
+  }
+
+  /* Texto auxiliar */
+  .field-helper {
+    @apply mt-1 text-xs;
+    color: var(--color-text-muted);
+  }
+
+  /* Erros */
+  .field-error {
+    @apply mt-1 text-xs font-medium;
+    color: var(--color-danger);
+  }
+}
