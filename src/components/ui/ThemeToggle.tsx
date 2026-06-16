@@ -41,8 +41,8 @@ function ThemeToggle() {
             className="inline-flex h-9 w-9 hover:cursor-pointer items-center justify-center rounded-full bg-[color:var(--color-surface)] text-[color:var(--color-primary)] hover:text-[color:var(--color-primary-hover)]"
         >
             {theme === 'dark'
-                ? <LightModeIcon fontSize="small"/>
-                : <DarkModeIcon fontSize="small"/>}
+                ? <DarkModeIcon fontSize="small"/>
+                : <LightModeIcon fontSize="small"/>}
         </Button>
     )
 }

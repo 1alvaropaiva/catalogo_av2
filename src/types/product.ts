@@ -1,7 +1,3 @@
-/**
- * Modelo principal de produto usado por toda a aplicação.
- * Representa como os dados devem estar no front-end após normalização.
- */
 export interface Product {
   id: string
   nome: string
@@ -12,8 +8,21 @@ export interface Product {
   createdAt?: string
 }
 
-/**
- * Estrutura enviada pelos formulários de criação/edição.
- * Remove campos controlados pela API (`id` e `createdAt`).
- */
-export type ProductFormData = Omit<Product, 'id' | 'createdAt'>
+export type ProductPayload =
+    Omit<Product, 'id' | 'createdAt'>
+
+export interface ProductFormValues {
+  nome: string
+  preco: string
+  descricao: string
+  imagem: string
+  categoria: string
+}
+
+export interface ProductFormErrors {
+  nome?: string
+  preco?: string
+  descricao?: string
+  imagem?: string
+  categoria?: string
+}

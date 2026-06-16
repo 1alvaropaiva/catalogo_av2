@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import ThemeToggle from './ui/ThemeToggle.tsx'
+import MenuIcon from '@mui/icons-material/Menu'
+import MenuOpenIcon from '@mui/icons-material/MenuOpen'
+import ThemeToggle from '../ui/ThemeToggle.tsx'
+import Button from "../ui/Button.tsx";
 
-// Estilo base compartilhado por todos os links do menu.
 const navLinkBase = 'rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200 hover:bg-[color:var(--color-hover)]'
 
-// Aplica estilo diferenciado quando a rota correspondente está ativa.
 const getNavLinkClassName = ({ isActive }: { isActive: boolean }): string =>
   `${navLinkBase} ${isActive ? 'bg-[color:var(--color-input-focus)] text-[color:var(--color-primary)]' : 'text-[color:var(--color-text)]'}`
 
-// Cabeçalho global com navegação desktop e menu móvel.
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleMenu = (): void => {
@@ -34,16 +34,36 @@ function Header() {
           <ThemeToggle />
         </div>
 
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-lg border border-[color:var(--color-border)] p-2 text-[color:var(--color-text)] transition hover:bg-[color:var(--color-hover)] md:hidden"
-          onClick={toggleMenu}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-menu"
-          aria-label="Abrir ou fechar menu"
+        <Button
+            type="button"
+            className="
+            inline-flex items-center justify-center
+            rounded-lg border border-[color:var(--color-border)]
+            p-2
+            text-[color:var(--color-text)]
+            hover:cursor-pointer
+            transition-all duration-300
+            hover:bg-[color:var(--color-hover)]
+            md:hidden
+          "
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label="Abrir ou fechar menu"
         >
-          <span className="text-lg leading-none">☰</span>
-        </button>
+          <span
+              className={`
+              transition-transform duration-300
+              ${isMenuOpen ? 'rotate-180' : 'rotate-0'}
+            `}
+          >
+            {isMenuOpen ? (
+                <MenuOpenIcon fontSize="medium" />
+            ) : (
+                <MenuIcon fontSize="medium" />
+            )}
+          </span>
+        </Button>
 
         <div className="hidden items-center gap-2 md:flex">
           <NavLink to="/" className={getNavLinkClassName} end>

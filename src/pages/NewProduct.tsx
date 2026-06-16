@@ -1,22 +1,16 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { criarProduto } from '../api/produtos.ts'
-import ErrorMessage from '../components/ErrorMessage.tsx'
-import ProductForm from '../components/ProductForm.tsx'
+import ErrorMessage from '../states/ErrorMessage.tsx'
+import ProductForm from '../components/product/ProductForm.tsx'
 import type { ProductFormData } from '../types/product.ts'
 
-// Página de cadastro: recebe dados do formulário e cria um novo produto na API.
 function NewProduct() {
-  // Navegação programática para redirecionar após sucesso.
   const navigate = useNavigate()
-  // Estado de envio para bloquear botão e evitar múltiplos envios.
   const [isSubmitting, setIsSubmitting] = useState(false)
-  // Mensagem positiva após criação bem-sucedida.
   const [feedback, setFeedback] = useState<string | null>(null)
-  // Mensagem de erro para falhas de cadastro.
   const [error, setError] = useState<string | null>(null)
 
-  // Fluxo de criação do produto, incluindo feedback e redirecionamento.
   const handleCreateProduct = async (formData: ProductFormData): Promise<void> => {
     setIsSubmitting(true)
     setFeedback(null)
@@ -46,17 +40,19 @@ function NewProduct() {
         <p className="mt-2 text-sm text-[color:var(--color-text-muted)] sm:text-base">
           Preencha os campos abaixo para adicionar um novo item ao catálogo.
         </p>
+
+        {feedback && (
+            <div className="surface-card border border-[color:var(--color-border)] bg-[color:var(--color-input-focus)] text-sm font-medium text-[color:var(--color-primary)]">
+              {feedback}
+            </div>
+        )}
+
+        {error && <ErrorMessage message={error} />}
+
+        <ProductForm onSubmit={handleCreateProduct} isSubmitting={isSubmitting} />
       </section>
 
-      {feedback && (
-        <div className="surface-card border border-[color:var(--color-border)] bg-[color:var(--color-input-focus)] text-sm font-medium text-[color:var(--color-primary)]">
-          {feedback}
-        </div>
-      )}
 
-      {error && <ErrorMessage message={error} />}
-
-      <ProductForm onSubmit={handleCreateProduct} isSubmitting={isSubmitting} />
     </div>
   )
 }

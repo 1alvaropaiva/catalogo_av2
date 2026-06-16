@@ -1,10 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
-import Header from './components/Header'
+import Header from './components/layout/Header.tsx'
 import Home from './pages/Home.tsx'
 import NewProduct from './pages/NewProduct.tsx'
 import ProductPage from './pages/ProductPage.tsx'
 
-// Componente raiz de páginas: define layout global e tabela de rotas da aplicação.
 function App() {
   return (
     <div className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)] transition-colors duration-300">

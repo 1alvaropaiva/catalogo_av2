@@ -1,23 +1,20 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import type { SyntheticEvent } from 'react'
-import type { Product } from '../types/product'
+import type { Product } from '../../types/product.ts'
+import Button from "../ui/Button.tsx";
 
-/** Propriedades necessárias para renderizar um card de produto. */
 interface ProductCardProps {
-  /** Produto já normalizado para exibição. */
   product: Product
 }
 
-// Imagem de fallback usada quando a URL do produto está ausente ou quebra.
 const PLACEHOLDER_IMAGE = 'https://placehold.co/600x400/e2e8f0/64748b?text=Sem+Imagem'
 
-// Card de resumo com imagem, preço, categoria e link para detalhes.
 function ProductCard({ product }: ProductCardProps) {
-  // Troca a imagem por um placeholder para evitar ícones de imagem quebrada.
   const handleImageError = (event: SyntheticEvent<HTMLImageElement>): void => {
     event.currentTarget.onerror = null
     event.currentTarget.src = PLACEHOLDER_IMAGE
   }
+  const navigate = useNavigate()
 
   return (
     <article className="surface-card flex h-full flex-col overflow-hidden p-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -40,9 +37,13 @@ function ProductCard({ product }: ProductCardProps) {
 
         <div className="mt-5 flex-grow" />
 
-        <Link to={`/produto/${product.id}`} className="btn-primary mt-3 inline-flex justify-center">
+        <Button
+            type="button"
+            className="btn-primary mt-3 inline-flex justify-center"
+            onClick={() => navigate(`/produto/${product.id}`)}
+        >
           Ver detalhes
-        </Link>
+        </Button>
       </div>
     </article>
   )

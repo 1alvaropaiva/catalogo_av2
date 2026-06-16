@@ -19,15 +19,12 @@
     --shadow-color: rgb(167 139 250 / 0.08);
   }
 
-  /* dark theme = Quando existir a classe:
-    <html class="dark">
-    essas variáveis substituem automaticamente as do :root
-  */
+  /* dark theme */
   .dark {
     color-scheme: dark;
     --color-bg: #140f1f;
     --color-surface: #1d172b;
-    --color-primary: #c4b5fd;
+    --color-primary: #9d91d1;
     --color-primary-hover: #a78bfa;
     --color-accent: #f9a8d4;
     --color-text: #f5f3ff;
@@ -40,12 +37,12 @@
     --shadow-color: rgb(0 0 0 / 0.3);
   }
 
-  /* Border padrão global */
+  /* border padrão global */
   * {
     @apply border-[color:var(--color-border)];
   }
 
-  /* Body global */
+  /* body global */
   body {
     @apply min-h-screen antialiased transition-colors duration-300;
     background-color: var(--color-bg);
@@ -90,25 +87,57 @@
   }
 
   /* Botão principal */
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60;
-    background-color: var(--color-primary);
-  }
-
-  /* Hover botão principal */
-  .btn-primary:hover {
-    background-color: var(--color-primary-hover);
-  }
-
-  /* Botão secundário */
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-200;
     background-color: var(--color-surface);
     color: var(--color-text);
   }
 
-  /* Hover botão secundário */
+  /* Hover botão principal */
   .btn-secondary:hover {
+    cursor: pointer;
+    background-color: var(--color-hover);
+  }
+
+  /* Botão secundário */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-200;
+    background-color: transparent;
+    color: var(--color-text-muted);
+    border-color: var(--color-border);
+  }
+
+  /* Hover botão secundário */
+  .btn-primary:hover {
+    cursor: pointer;
+    background-color: var(--color-hover);
+    color: var(--color-text);
+    border-color: var(--color-primary);
+  }
+
+  /* Botão de perigo */
+  .btn-danger {
+    @apply inline-flex items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-200;
+    background-color: var(--color-danger);
+    color: #ffffff;
+    border-color: var(--color-danger);
+  }
+
+  /* Hover botão de perigo */
+  .btn-danger:hover {
+    cursor: pointer;
+    filter: brightness(0.85);
+    transform: scale(1.02);
+  }
+
+  /* Active botão de perigo */
+  .btn-danger:active {
+    transform: scale(0.98);
+  }
+
+  /* Hover botão principal */
+  .btn-primary:hover {
+    cursor: pointer;
     background-color: var(--color-hover);
   }
 

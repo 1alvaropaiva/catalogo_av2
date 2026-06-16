@@ -1,22 +1,16 @@
-import ErrorMessage from './ErrorMessage'
-import Loading from './Loading'
-import ProductCard from './ProductCard'
-import type { Product } from '../types/product'
+import ErrorMessage from '../../states/ErrorMessage.tsx'
+import Loading from '../../states/Loading.tsx'
+import ProductCard from './ProductCard.tsx'
+import type { Product } from '../../types/product.ts'
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 
-/** Propriedades de controle para a listagem de produtos. */
 interface ProductListProps {
-  /** Lista já filtrada ou completa de produtos para renderização. */
   products: Product[]
-  /** Estado de carregamento da operação principal de busca. */
   isLoading: boolean
-  /** Mensagem de erro atual, caso a busca tenha falhado. */
   error: string | null
-  /** Callback para repetir a ação de carregamento. */
   onRetry: () => void
 }
 
-// Decide qual estado da listagem exibir: loading, erro, vazio ou grade com cards.
 function ProductList({ products, isLoading, error, onRetry }: ProductListProps) {
   if (isLoading) {
     return <Loading message="Buscando produtos..." />
