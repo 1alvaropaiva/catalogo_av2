@@ -1,3 +1,27 @@
+﻿/**
+ * Arquivo: ProductPage.tsx
+ *
+ * Responsabilidade:
+ * Centraliza a responsabilidade principal deste módulo dentro do catálogo de produtos.
+ *
+ * Função dentro do sistema:
+ * Atua como parte do fluxo de interface, estado ou integração conforme sua pasta (componentes, páginas, hooks, API, tipos, utilitários e validações).
+ *
+ * Entradas:
+ * Recebe dados por props, parâmetros de função, estado local e/ou valores vindos de serviços e rotas.
+ *
+ * Saídas:
+ * Retorna elementos de interface, resultados transformados, estados atualizados ou payloads para integração.
+ *
+ * Dependências:
+ * Utiliza módulos internos do projeto e bibliotecas da stack React + TypeScript quando necessário.
+ *
+ * Fluxo:
+ * Executa seu papel específico no ciclo de renderização, validação, transformação de dados ou comunicação com API.
+ *
+ * Observações:
+ * Este cabeçalho foi adicionado para padronização documental sem alterar regras de negócio.
+ */
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getProdutoById } from '../api/produtos.ts'
@@ -15,7 +39,7 @@ function ProductPage() {
 
   const handleRetry = async (): Promise<void> => {
     if (!id) {
-      setError('Produto inválido.')
+      setError('Produto invÃ¡lido.')
       setIsLoading(false)
       return
     }
@@ -27,7 +51,7 @@ function ProductPage() {
       const data = await getProdutoById(id)
       setProduct(data)
     } catch {
-      setError('Não foi possível carregar os detalhes deste produto.')
+      setError('NÃ£o foi possÃ­vel carregar os detalhes deste produto.')
     } finally {
       setIsLoading(false)
     }
@@ -39,7 +63,7 @@ function ProductPage() {
     const loadInitialProduct = async (): Promise<void> => {
       if (!id) {
         if (isActive) {
-          setError('Produto inválido.')
+          setError('Produto invÃ¡lido.')
           setIsLoading(false)
         }
 
@@ -55,7 +79,7 @@ function ProductPage() {
         }
       } catch {
         if (isActive) {
-          setError('Não foi possível carregar os detalhes deste produto.')
+          setError('NÃ£o foi possÃ­vel carregar os detalhes deste produto.')
         }
       } finally {
         if (isActive) {
@@ -80,7 +104,7 @@ function ProductPage() {
   }
 
   if (!product) {
-    return <ErrorMessage message="Produto não encontrado." onRetry={() => navigate('/')} />
+    return <ErrorMessage message="Produto nÃ£o encontrado." onRetry={() => navigate('/')} />
   }
 
   return <ProductDetail product={product} onBack={() => navigate(-1)} />

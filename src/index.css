@@ -1,3 +1,27 @@
+﻿/*
+ * Arquivo: index.css
+ *
+ * Responsabilidade:
+ * Define estilos globais e utilitários visuais utilizados pela aplicação.
+ *
+ * Função dentro do sistema:
+ * Fornece tokens e classes de apresentação para manter consistência de layout, tipografia, temas e componentes.
+ *
+ * Entradas:
+ * Variáveis CSS, classes utilitárias e estados visuais aplicados pelos componentes.
+ *
+ * Saídas:
+ * Regras de estilo compiladas e aplicadas na interface em tempo de execução.
+ *
+ * Dependências:
+ * Pipeline de build do Vite e consumo pelos arquivos de entrada da aplicação.
+ *
+ * Fluxo:
+ * Carregado no bootstrap da aplicação para disponibilizar estilos globais antes da renderização principal.
+ *
+ * Observações:
+ * Documentação de topo adicionada sem impacto funcional.
+ */
 @import 'tailwindcss';
 @layer base {
 
@@ -37,7 +61,7 @@
     --shadow-color: rgb(0 0 0 / 0.3);
   }
 
-  /* border padrão global */
+  /* border padrÃ£o global */
   * {
     @apply border-[color:var(--color-border)];
   }
@@ -67,12 +91,12 @@
 
 /* COMPONENTES */
 @layer components {
-  /* Container padrão */
+  /* Container padrÃ£o */
   .page-container {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
-  /* Card reutilizável */
+  /* Card reutilizÃ¡vel */
   .surface-card {
     @apply rounded-2xl border p-5 transition-all duration-300 sm:p-6;
     background-color: var(--color-surface);
@@ -86,20 +110,20 @@
     color: var(--color-primary);
   }
 
-  /* Botão principal */
+  /* BotÃ£o principal */
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-200;
     background-color: var(--color-surface);
     color: var(--color-text);
   }
 
-  /* Hover botão principal */
+  /* Hover botÃ£o principal */
   .btn-secondary:hover {
     cursor: pointer;
     background-color: var(--color-hover);
   }
 
-  /* Botão secundário */
+  /* BotÃ£o secundÃ¡rio */
   .btn-primary {
     @apply inline-flex items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-200;
     background-color: transparent;
@@ -107,7 +131,7 @@
     border-color: var(--color-border);
   }
 
-  /* Hover botão secundário */
+  /* Hover botÃ£o secundÃ¡rio */
   .btn-primary:hover {
     cursor: pointer;
     background-color: var(--color-hover);
@@ -115,7 +139,7 @@
     border-color: var(--color-primary);
   }
 
-  /* Botão de perigo */
+  /* BotÃ£o de perigo */
   .btn-danger {
     @apply inline-flex items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-200;
     background-color: var(--color-danger);
@@ -123,19 +147,19 @@
     border-color: var(--color-danger);
   }
 
-  /* Hover botão de perigo */
+  /* Hover botÃ£o de perigo */
   .btn-danger:hover {
     cursor: pointer;
     filter: brightness(0.85);
     transform: scale(1.02);
   }
 
-  /* Active botão de perigo */
+  /* Active botÃ£o de perigo */
   .btn-danger:active {
     transform: scale(0.98);
   }
 
-  /* Hover botão principal */
+  /* Hover botÃ£o principal */
   .btn-primary:hover {
     cursor: pointer;
     background-color: var(--color-hover);

@@ -1,3 +1,27 @@
+﻿/**
+ * Arquivo: Header.tsx
+ *
+ * Responsabilidade:
+ * Centraliza a responsabilidade principal deste módulo dentro do catálogo de produtos.
+ *
+ * Função dentro do sistema:
+ * Atua como parte do fluxo de interface, estado ou integração conforme sua pasta (componentes, páginas, hooks, API, tipos, utilitários e validações).
+ *
+ * Entradas:
+ * Recebe dados por props, parâmetros de função, estado local e/ou valores vindos de serviços e rotas.
+ *
+ * Saídas:
+ * Retorna elementos de interface, resultados transformados, estados atualizados ou payloads para integração.
+ *
+ * Dependências:
+ * Utiliza módulos internos do projeto e bibliotecas da stack React + TypeScript quando necessário.
+ *
+ * Fluxo:
+ * Executa seu papel específico no ciclo de renderização, validação, transformação de dados ou comunicação com API.
+ *
+ * Observações:
+ * Este cabeçalho foi adicionado para padronização documental sem alterar regras de negócio.
+ */
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -22,14 +46,14 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-[color:var(--color-border)] bg-[color:var(--color-surface)]/90 backdrop-blur">
-      <nav className="page-container flex items-center justify-between py-4" aria-label="Navegação principal">
+      <nav className="page-container flex items-center justify-between py-4" aria-label="NavegaÃ§Ã£o principal">
         <div className="flex items-center gap-3">
           <NavLink
             to="/"
             className="text-lg font-bold tracking-tight text-[color:var(--color-primary)] transition-colors hover:text-[color:var(--color-primary-hover)]"
             onClick={closeMenu}
           >
-            Catálogo FAETERJ
+            CatÃ¡logo FAETERJ
           </NavLink>
           <ThemeToggle />
         </div>

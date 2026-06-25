@@ -1,3 +1,27 @@
+﻿/**
+ * Arquivo: Home.tsx
+ *
+ * Responsabilidade:
+ * Centraliza a responsabilidade principal deste módulo dentro do catálogo de produtos.
+ *
+ * Função dentro do sistema:
+ * Atua como parte do fluxo de interface, estado ou integração conforme sua pasta (componentes, páginas, hooks, API, tipos, utilitários e validações).
+ *
+ * Entradas:
+ * Recebe dados por props, parâmetros de função, estado local e/ou valores vindos de serviços e rotas.
+ *
+ * Saídas:
+ * Retorna elementos de interface, resultados transformados, estados atualizados ou payloads para integração.
+ *
+ * Dependências:
+ * Utiliza módulos internos do projeto e bibliotecas da stack React + TypeScript quando necessário.
+ *
+ * Fluxo:
+ * Executa seu papel específico no ciclo de renderização, validação, transformação de dados ou comunicação com API.
+ *
+ * Observações:
+ * Este cabeçalho foi adicionado para padronização documental sem alterar regras de negócio.
+ */
 import { getCategorias, getProdutos } from '../api/produtos.ts'
 import { useEffect, useState } from 'react'
 import type { Product } from '../types/product.ts'
@@ -54,12 +78,12 @@ function Home() {
 
       setProducts(data)
 
-      // volta para página 1 após nova busca
+      // volta para pÃ¡gina 1 apÃ³s nova busca
       setCurrentPage(1)
 
     } catch {
       setError(
-          'Não foi possível carregar os produtos. Verifique a conexão e tente novamente.',
+          'NÃ£o foi possÃ­vel carregar os produtos. Verifique a conexÃ£o e tente novamente.',
       )
     } finally {
       setIsLoading(false)
@@ -82,11 +106,11 @@ function Home() {
 
         <section>
           <h1 className="text-3xl font-bold">
-            Catálogo de Produtos
+            CatÃ¡logo de Produtos
           </h1>
 
           <p className="mt-2 text-sm text-[color:var(--color-text-muted)] sm:text-base">
-            Explore os itens disponíveis, filtre por categoria e encontre produtos pelo nome.
+            Explore os itens disponÃ­veis, filtre por categoria e encontre produtos pelo nome.
           </p>
 
           <SearchBar
@@ -133,7 +157,7 @@ function Home() {
               </button>
 
               <span className="text-sm">
-            Página {currentPage} de {totalPages}
+            PÃ¡gina {currentPage} de {totalPages}
           </span>
 
               <button
@@ -141,7 +165,7 @@ function Home() {
                   disabled={currentPage === totalPages}
                   className="rounded border px-4 py-2 disabled:opacity-50 disabled:hover:cursor-auto hover:cursor-pointer"
               >
-                Próxima
+                PrÃ³xima
               </button>
 
             </div>
