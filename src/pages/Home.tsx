@@ -164,7 +164,7 @@ function Home() {
                   disabled={currentPage === totalPages}
                   className="rounded border px-4 py-2 disabled:opacity-50 disabled:hover:cursor-auto hover:cursor-pointer"
               >
-                PrÃ³xima
+                Próxima
               </button>
 
             </div>
