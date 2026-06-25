@@ -61,7 +61,7 @@ function NewProduct() {
           Cadastrar novo produto
         </h1>
         <p className="mt-2 text-sm text-[color:var(--color-text-muted)] sm:text-base">
-          Preencha os campos abaixo para adicionar um novo item ao catÃ¡logo.
+          Preencha os campos abaixo para adicionar um novo item ao catálogo.
         </p>
 
         {feedback && (

@@ -52,7 +52,7 @@ function SearchBar({
                 type="search"
                 value={searchTerm}
                 onChange={(event) => onSearchTermChange(event.target.value)}
-                placeholder="Ex.: Teclado mecÃ¢nico"
+                placeholder="Ex.: Teclado mecânico"
                 className="field-input"
             />
           </label>

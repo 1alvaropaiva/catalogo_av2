@@ -311,7 +311,7 @@ function ProductDetail({ product, onBack }: ProductDetailProps) {
               text-[color:var(--color-text-muted)]
             "
               >
-                DescriÃ§Ã£o
+                Descrição
               </h2>
 
               <p

@@ -78,12 +78,11 @@ function Home() {
 
       setProducts(data)
 
-      // volta para pÃ¡gina 1 apÃ³s nova busca
       setCurrentPage(1)
 
     } catch {
       setError(
-          'NÃ£o foi possÃ­vel carregar os produtos. Verifique a conexÃ£o e tente novamente.',
+          'Não foi possível carregar os produtos. Verifique a conexão e tente novamente.',
       )
     } finally {
       setIsLoading(false)
@@ -106,11 +105,11 @@ function Home() {
 
         <section>
           <h1 className="text-3xl font-bold">
-            CatÃ¡logo de Produtos
+            Catálogo de Produtos
           </h1>
 
           <p className="mt-2 text-sm text-[color:var(--color-text-muted)] sm:text-base">
-            Explore os itens disponÃ­veis, filtre por categoria e encontre produtos pelo nome.
+            Explore os itens disponíveis, filtre por categoria e encontre produtos pelo nome.
           </p>
 
           <SearchBar
@@ -157,7 +156,7 @@ function Home() {
               </button>
 
               <span className="text-sm">
-            PÃ¡gina {currentPage} de {totalPages}
+            Página {currentPage} de {totalPages}
           </span>
 
               <button

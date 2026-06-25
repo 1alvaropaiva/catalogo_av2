@@ -63,7 +63,7 @@ function NotFound() {
                     text-[color:var(--color-text)]
                 "
             >
-                PÃ¡gina nÃ£o encontrada
+                Página não encontrada
             </h1>
 
             <p
@@ -73,7 +73,7 @@ function NotFound() {
                     text-[color:var(--color-text-muted)]
                 "
             >
-                A pÃ¡gina que vocÃª tentou acessar nÃ£o existe
+                A página que você tentou acessar não existe
                 ou foi removida.
             </p>
 
@@ -83,7 +83,7 @@ function NotFound() {
                     className="btn-primary"
                     onClick={() => navigate('/')}
                 >
-                    Voltar ao inÃ­cio
+                    Voltar ao início
                 </Button>
 
             </div>

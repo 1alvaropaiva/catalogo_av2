@@ -53,7 +53,7 @@ function Header() {
             className="text-lg font-bold tracking-tight text-[color:var(--color-primary)] transition-colors hover:text-[color:var(--color-primary-hover)]"
             onClick={closeMenu}
           >
-            CatÃ¡logo FAETERJ
+            Catálogo FAETERJ
           </NavLink>
           <ThemeToggle />
         </div>

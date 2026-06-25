@@ -86,7 +86,7 @@ function ProductForm({
 
       <div>
         <label htmlFor="preco" className="field-label">
-          PreÃ§o
+          Preço
         </label>
         <input
           id="preco"
@@ -104,7 +104,7 @@ function ProductForm({
 
       <div>
         <label htmlFor="descricao" className="field-label">
-          DescriÃ§Ã£o
+          Descrição
         </label>
         <textarea
           id="descricao"
@@ -123,7 +123,6 @@ function ProductForm({
               Imagem
             </label>
 
-            {/* INPUT PRIMEIRO */}
             {imageMode === 'url' ? (
                 <>
                   <input
@@ -141,7 +140,7 @@ function ProductForm({
                   />
 
                   <p className="field-helper">
-                    Dica: NÃ£o tem um link? Transforme sua foto em URL usando o{' '}
+                    Dica: Não tem um link? Transforme sua foto em URL usando o{' '}
                     <a
                         href="https://pages.edgeone.ai/drop"
                         target="_blank"
@@ -159,7 +158,6 @@ function ProductForm({
                 </>
             ) : (
                 <div className="space-y-3">
-                  {/* input real escondido */}
                   <input
                       id="imagem-upload"
                       type="file"
@@ -168,7 +166,6 @@ function ProductForm({
                       onChange={handleImageChange}
                   />
 
-                  {/* botÃ£o separado */}
                   <label
                       htmlFor="imagem-upload"
                       className="
@@ -182,7 +179,6 @@ function ProductForm({
                     Escolher arquivo
                   </label>
 
-                  {/* nome/estado separado */}
                   <p
                       className="
               text-center
@@ -200,7 +196,7 @@ function ProductForm({
             {values.imagem && (
                 <img
                     src={values.imagem}
-                    alt="PrÃ©-visualizaÃ§Ã£o"
+                    alt="Pré-visualização"
                     className="
             mt-4
             h-40
@@ -213,7 +209,6 @@ function ProductForm({
                 />
             )}
 
-            {/* BOTÃ•ES AGORA EMBAIXO E CENTRALIZADOS */}
             <div className="mt-4 flex justify-center gap-3">
               <Button
                   type="button"
@@ -256,7 +251,7 @@ function ProductForm({
           name="categoria"
           type="text"
           className="field-input"
-          placeholder="Ex.: PerifÃ©ricos"
+          placeholder="Ex.: Periféricos"
           value={values.categoria}
           onChange={handleFieldChange}
         />
